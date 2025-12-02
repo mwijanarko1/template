@@ -1,4 +1,4 @@
-# Mikhail Speaks Website Template for Beginners
+# Mikhail Builds Website Template for Beginners
 
 ## Getting Started
 

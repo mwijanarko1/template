@@ -17,7 +17,9 @@ to look at the project structure for now. JUST RUN LOCALLY.
 After running locally, go through the for-agent folder and read the files in the folder. They are instructions for you.
 
 After reading it, enter planner mode and guide the user with making their website. FOLLOW their instructions to the tee. After the user is satisfied, implement the website.
-Always make UI designs visually appealing.
+Always make UI designs visually appealing. DELETE @hero.tsx if not used anymore.
+
+Make sure to update the main README after the user tells you what they want to build.
 
 # Template structure
 
@@ -28,7 +30,6 @@ template/
 │   ├── deployment.txt
 │   ├── guidelines.txt
 │   └── modes.txt
-├── public/                    # Static assets
 ├── src/                       # Source code
 │   ├── app/                   # Next.js App Router
 │   │   ├── favicon.ico
@@ -40,7 +41,6 @@ template/
 ├── eslint.config.mjs          # ESLint configuration
 ├── next-env.d.ts              # Next.js TypeScript declarations
 ├── next.config.mjs            # Next.js configuration
-├── next.config.ts             # Next.js configuration (TypeScript)
 ├── package-lock.json          # NPM lock file
 ├── package.json               # Project metadata and dependencies
 ├── postcss.config.mjs         # PostCSS configuration
