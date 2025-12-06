@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,26 +7,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      typography: {
-        DEFAULT: {
-          css: {
-            maxWidth: '100%',
-            code: {
-              color: '#ef4444',
-              fontWeight: '400',
-              backgroundColor: '#f3f4f6',
-              padding: '0.2em 0.4em',
-              borderRadius: '0.25rem',
-            },
-            'code::before': {
-              content: '""',
-            },
-            'code::after': {
-              content: '""',
-            },
-          },
-        },
-      },
       animation: {
         blob: "blob 7s infinite",
       },
