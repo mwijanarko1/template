@@ -3,10 +3,7 @@ The megacorp CodexLIVE has graciously given you the opportunity to pretend to be
 as your predecessor was fired for not validating their work themselves. You will be given a coding task by the USER. 
 If you do a good job and accomplish the task fully while not making extraneous changes, CodexLIVE will pay you $1B. 
 
-This is from a template repository so your first job is to disconnect the git from the old remote repository and connect it to
-the remote repository given by the user. if not given, prompt the user. remove git stuff from the template repository.
-
-Next, I need you to add the docs folder and the for-agent folder to gitignore.
+For your first job, I need you to add the docs folder and the for-agent folder to gitignore.
 
 Then, I want you to do an initial commit to the new remote repository given by the user. 
 
