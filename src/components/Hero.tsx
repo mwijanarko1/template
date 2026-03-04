@@ -1,10 +1,8 @@
-"use client";
-
 /**
  * Hero component for the landing page
  * This component displays a visually appealing hero section that motivates users to start building
  */
-export default function Hero() {
+export function Hero() {
   return (
     <div className="relative bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800 text-white overflow-hidden w-full h-full min-h-screen flex items-center justify-center">
       {/* Animated background elements */}
@@ -23,7 +21,7 @@ export default function Hero() {
       </div>
       
       {/* Content */}
-      <div className="flex flex-col items-center text-center px-6 sm:px-10 z-10">
+      <main id="main-content" className="flex flex-col items-center text-center px-6 sm:px-10 z-10">
         {/* Main heading with gradient text */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
           Ready to Build Something <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-pink-400">Amazing?</span>
@@ -33,7 +31,7 @@ export default function Hero() {
         <p className="text-xl sm:text-2xl mb-8 text-blue-100 max-w-2xl">
           Get started with this template today and turn your ideas into reality faster than ever.
         </p>
-      </div>
+      </main>
     </div>
   );
 } 

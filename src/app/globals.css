@@ -96,6 +96,12 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob {
+    animation: none;
+  }
+}
+
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
   width: 8px;
@@ -138,6 +144,10 @@ code {
 }
 
 /* Base styles */
+html {
+  color-scheme: light dark;
+}
+
 body {
   font-family: 'Geist', sans-serif;
   color: #1f2937;

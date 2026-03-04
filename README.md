@@ -2,7 +2,7 @@
 
 A modern, beginner-friendly Next.js template designed for rapid web development with Cursor IDE integration.
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js 16 with App Router
 - **Language**: TypeScript for type safety
@@ -12,7 +12,7 @@ A modern, beginner-friendly Next.js template designed for rapid web development 
 - **Linting**: ESLint with Next.js configuration
 - **Build Tool**: PostCSS with Autoprefixer
 
-## ✨ Features
+## Features
 
 - **Modern UI Components**: Pre-built Hero component with animated gradient backgrounds
 - **Responsive Design**: Mobile-first approach with Tailwind CSS
@@ -23,11 +23,12 @@ A modern, beginner-friendly Next.js template designed for rapid web development 
 - **Authentication Ready**: Clerk integration guide included
 - **Backend Ready**: Convex database integration guide included
 
-## 🛠 Getting Started
+## Getting Started
 
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18 or higher)
+- [Bun](https://bun.sh/) (recommended package manager for this template)
 - [Cursor IDE](https://cursor.sh/) (recommended)
 
 ### Installation
@@ -43,12 +44,12 @@ A modern, beginner-friendly Next.js template designed for rapid web development 
 
 3. **Install dependencies**
    ```bash
-   npm install
+   bun install
    ```
 
 4. **Start the development server**
    ```bash
-   npm run dev
+   bun run dev
    ```
 
 5. **Open Cursor Composer**
@@ -64,7 +65,7 @@ A modern, beginner-friendly Next.js template designed for rapid web development 
    - If errors occur, copy/paste the error or screenshot it
    - Ask the agent to fix the specific error
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 template/
@@ -96,7 +97,7 @@ template/
 └── package.json               # Dependencies and scripts
 ```
 
-## 📚 Documentation
+## Documentation
 
 ### Codebase Architecture
 For a comprehensive overview of the codebase structure, architecture diagrams, data flows, and navigation guide, see [`docs/CODEBASE_MAP.md`](docs/CODEBASE_MAP.md).
@@ -117,7 +118,22 @@ The `for-agent/` directory contains instructions that help the AI agent understa
 - **modes.txt**: Different agent modes and when to use them
 - **ui-guide.txt**: UI/UX design guidelines
 
-## 🎨 Customization
+## Testing
+
+Run the test suite:
+
+```bash
+bun run test        # Watch mode
+bun run test:run    # Single run
+```
+
+Tests use Vitest and React Testing Library. Add `*.test.tsx` files next to your components.
+
+## Environment
+
+Copy `.env.example` to `.env.local` and fill in values. Use `getEnv()` from `src/lib/env.ts` for validated access. Extend the Zod schema when adding Clerk, Convex, or other services.
+
+## Customization
 
 ### Styling
 - Modify `tailwind.config.js` to add custom colors, fonts, or animations
@@ -129,21 +145,21 @@ The `for-agent/` directory contains instructions that help the AI agent understa
 - Import and use them in your pages
 - Follow the existing Hero component pattern
 
-## 🚀 Deployment
+## Deployment
 
 ### Build for Production
 ```bash
-npm run build
+bun run build
 ```
 
 ### Start Production Server
 ```bash
-npm start
+bun run start
 ```
 
 The template is ready to deploy to Vercel, Netlify, or any other hosting platform that supports Next.js.
 
-## 🤝 Contributing
+## Contributing
 
 This template is designed to be extended and customized. Feel free to:
 - Add new components
@@ -151,6 +167,6 @@ This template is designed to be extended and customized. Feel free to:
 - Extend functionality
 - Share your improvements
 
-## 📝 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
