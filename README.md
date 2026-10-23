@@ -1,6 +1,6 @@
 # Mikhail Builds Website Template for Beginners
 
-A modern, beginner-friendly Next.js template designed for rapid web development with Cursor IDE integration.
+A modern, beginner-friendly Next.js template for rapid web development.
 
 ## Tech Stack
 
@@ -9,7 +9,8 @@ A modern, beginner-friendly Next.js template designed for rapid web development 
 - **UI Library**: React 19
 - **Styling**: Tailwind CSS v4 with custom animations
 - **Development**: Turbopack for fast builds
-- **Linting**: ESLint with Next.js configuration
+- **Linting**: Oxlint (primary, with anti-slop rules) plus ESLint / Next.js config
+- **Testing**: Vitest with Testing Library
 - **Build Tool**: PostCSS with Autoprefixer
 
 ## Features
@@ -18,10 +19,7 @@ A modern, beginner-friendly Next.js template designed for rapid web development 
 - **Responsive Design**: Mobile-first approach with Tailwind CSS
 - **TypeScript Support**: Full type checking and IntelliSense
 - **Custom Animations**: Blob animations and smooth transitions
-- **Developer Experience**: Optimized with Turbopack for lightning-fast development
-- **Cursor IDE Integration**: Designed to work seamlessly with Cursor's AI agent
-- **Authentication Ready**: Clerk integration guide included
-- **Backend Ready**: Convex database integration guide included
+- **Developer Experience**: Optimized with Turbopack for fast local development
 
 ## Getting Started
 
@@ -29,103 +27,71 @@ A modern, beginner-friendly Next.js template designed for rapid web development 
 
 - [Node.js](https://nodejs.org/) (v18 or higher)
 - [Bun](https://bun.sh/) (recommended package manager for this template)
-- [Cursor IDE](https://cursor.sh/) (recommended)
 
 ### Installation
 
-1. **Download Cursor IDE**
-   - Visit [cursor.sh](https://cursor.sh/) and download the latest version
-
-2. **Clone the repository**
+1. **Clone the repository**
    ```bash
    git clone https://github.com/mwijanarko1/template.git
    cd template
    ```
 
-3. **Install dependencies**
+2. **Install dependencies**
    ```bash
    bun install
    ```
 
-4. **Start the development server**
+3. **Start the development server**
    ```bash
    bun run dev
    ```
-
-5. **Open Cursor Composer**
-   - Press `CMD + I` to open the Composer
-   - Make sure to select the "Agent" mode
-
-6. **Use the AI Agent**
-   - Copy the contents of the `docs/PROMPT.txt` file and paste it into the Composer Agent
-   - Let the AI generate your project structure and components
-   - Chat with the agent to build features - it will handle the coding for you
-
-7. **Fix any issues**
-   - If errors occur, copy/paste the error or screenshot it
-   - Ask the agent to fix the specific error
 
 ## Project Structure
 
 ```
 template/
-├── docs/                       # Documentation and guides
-│   ├── PROMPT.txt             # AI agent prompt instructions
-│   ├── CURSOR_GUIDE.md        # Comprehensive Cursor IDE guide
-│   ├── clerk/                 # Clerk authentication guides
-│   │   └── clerk-auth-guide.md
-│   └── convex/                # Convex database guides
-│       ├── convex-db-guide.md
-│       └── convex_rules.mdc
-├── for-agent/                 # Agent-specific instructions
-│   ├── deployment.txt         # Deployment guidelines
-│   ├── guidelines.txt         # General coding guidelines
-│   ├── modes.txt              # Agent modes and instructions
-│   └── ui-guide.txt           # UI/UX guidelines
-├── src/                       # Source code
-│   ├── app/
-│   │   ├── layout.tsx         # Root layout component
-│   │   ├── page.tsx           # Home page
-│   │   ├── globals.css        # Global styles
-│   │   └── favicon.ico        # App favicon
-│   └── components/
-│       └── Hero.tsx           # Hero section component
-├── tailwind.config.js         # Tailwind CSS configuration
-├── next.config.mjs            # Next.js configuration
-├── postcss.config.mjs         # PostCSS configuration
-├── eslint.config.mjs          # ESLint configuration
-└── package.json               # Dependencies and scripts
+├── AGENTS.md                  # Agent rules + CLI profile placeholders
+├── docs/
+│   ├── CODEBASE_MAP.md        # Architecture / navigation map
+│   ├── security-checklist.md
+│   ├── web-compliance-checklist.md
+│   └── technical-seo-checklist.md
+├── src/
+│   ├── app/                   # Next.js App Router entrypoints
+│   ├── components/            # UI components (Hero + tests)
+│   ├── lib/                   # Shared helpers (env validation)
+│   └── test/                  # Vitest setup
+├── tools/oxlint/anti-slop/    # Custom oxlint rules used across Mikhail Builds repos
+├── oxlint.config.mjs          # Primary linter config
+├── eslint.config.mjs          # ESLint / Next.js config
+├── vitest.config.mts          # Unit test config
+├── next.config.mjs
+├── postcss.config.mjs
+├── tailwind.config.js
+└── package.json
 ```
 
 ## Documentation
 
-### Codebase Architecture
-For a comprehensive overview of the codebase structure, architecture diagrams, data flows, and navigation guide, see [`docs/CODEBASE_MAP.md`](docs/CODEBASE_MAP.md).
+- [`AGENTS.md`](AGENTS.md): working rules for coding agents, including GitHub / Cloudflare / Convex / Clerk / Resend profile placeholders (`YOUR_*`)
+- [`docs/CODEBASE_MAP.md`](docs/CODEBASE_MAP.md): modules, routes, workflows, and risks
+- [`docs/security-checklist.md`](docs/security-checklist.md): security gate (`security-audit` / `security-vulnerability-mitigation`)
+- [`docs/web-compliance-checklist.md`](docs/web-compliance-checklist.md): privacy, a11y, consumer (`website-compliance`)
+- [`docs/technical-seo-checklist.md`](docs/technical-seo-checklist.md): crawl/index/metadata (`technical-seo`)
 
-### Cursor IDE Guide
-Check `docs/CURSOR_GUIDE.md` for detailed instructions on using Cursor IDE effectively with this template.
-
-### Authentication (Clerk)
-The `docs/clerk/` directory contains guides for integrating Clerk authentication into your project.
-
-### Backend/Database (Convex)
-The `docs/convex/` directory contains guides for setting up Convex as your backend and database solution.
-
-### Agent Instructions
-The `for-agent/` directory contains instructions that help the AI agent understand how to work with your project:
-- **deployment.txt**: Deployment best practices
-- **guidelines.txt**: General coding standards
-- **modes.txt**: Different agent modes and when to use them
-- **ui-guide.txt**: UI/UX design guidelines
-
-## Testing
-
-Run the test suite:
+## Scripts
 
 ```bash
-bun run test        # Watch mode
-bun run test:run    # Single run
+bun run dev         # Next.js + Turbopack
+bun run lint        # Oxlint (primary)
+bun run lint:eslint # ESLint / next core-web-vitals
+bun run typecheck   # TypeScript
+bun run test        # Vitest watch mode
+bun run test:run    # Vitest single run
+bun run build       # Production build
 ```
+
+## Testing
 
 Tests use Vitest and React Testing Library. Add `*.test.tsx` files next to your components.
 
